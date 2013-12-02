@@ -1,0 +1,19 @@
+body {
+    margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+.img-thumbnail {
+    border:0;
+}
+
+footer {
+    margin: 50px 0;
+}

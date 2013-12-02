@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en" ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>{% block title %}Base Title - should never see{% endblock title %}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
+        <link href="{% static 'css/portfolio.css' %}" rel="stylesheet">
+
+        <!-- AngularJS Library from Google's CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+
+        {% block extra_css %}{% endblock extra_css %}
+
+        {% block angular_controllers %}{% endblock angular_controllers %}
+    </head>
+
+    <body>
+        <div class="container">
+            {% block header %}
+                <div class="header">
+                    <ul class="nav nav-pills pull-right">
+                        {% block home_link %}<li><a href="/portfolio-home">Home</a></li>{% endblock home_link %}
+                    </ul>
+                    <h3 class="text-muted">Django Angular PT</h3>
+                </div>
+            {% endblock header %}
+
+            {% block content %}Base Content - should never see{% endblock content %}
+
+            {% block footer %}
+                <footer>
+                    <div class="container">
+                        <p class="text-muted credit">
+                            Copyright &copy; Dojo Dev Camp 2013 &middot;
+                        </p>
+                    </div>
+                </footer>
+            {% endblock footer %}
+        </div><!-- /.container -->
+
+        <!-- javascript -->
+        <script src="{% static 'js/jquery-2.0.3-min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% block extra_js %}{% endblock extra_js %}
+    </body>
+</html>

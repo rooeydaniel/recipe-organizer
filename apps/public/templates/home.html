@@ -7,11 +7,7 @@
 {% block home_link %}<li class="active"><a href="#">Home</a></li>{% endblock home_link %}
 
 {% block angular_controllers %}
-    <script type="application/javascript">
-        var HelloController = function($scope) {
-            $scope.name = 'Django Angular Project Template';
-        };
-    </script>
+    <script src="{% static 'js/controllers.js' %}"></script>
 {% endblock angular_controllers %}
 
 {% block content %}

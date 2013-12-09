@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Django Angular PT | Home{% endblock title %}
+
+{% block home_link %}<li class="active"><a href="#">Home</a></li>{% endblock home_link %}
+
+{% block content %}
+    <div class="container" ng-controller="LoginController">
+        <div id="messages" ng-show="message">{% verbatim %} {{ message }} {% endverbatim %}</div>
+
+{#        <form name="loginForm" class="form-signin" novalidate ng-submit="doLogin();">{% csrf_token %}#}
+        <form name="loginForm" class="form-signin" novalidate action="/authentication/" method="post">{% csrf_token %}
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <input type="text" name="username" class="form-control" placeholder="Email address" ng-model="user.username" required autofocus>
+            <span ng-show="hasError('username')">Email address is required</span>
+            <span ng-show="errorUsername">{% verbatim %} {{ errorUsername }} {% endverbatim %}</span>
+
+            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="user.password" required>
+            <span ng-show="hasError('password')">Password is required</span>
+            <span ng-show="errorPassword">{% verbatim %} {{ errorPassword }} {% endverbatim %}</span>
+
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+
+        <pre>
+            {% verbatim %}
+                {{ user }}
+            {% endverbatim %}
+        </pre>
+    </div> <!-- /container -->
+{% endblock content %}

@@ -23,6 +23,8 @@ path.append(DJANGO_ROOT)
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
+AUTH_USER_MODEL = 'authentication.User'
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -145,11 +147,15 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
+    'rest_framework',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'apps.public',
+    'apps.authentication',
+    'apps.recipe'
 )
 
 # A sample logging configuration. The only tangible logging

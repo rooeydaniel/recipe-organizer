@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-<html lang="en" ng-app="publicApp">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +19,6 @@
 
         <!-- AngularJS Library from Google's CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-        <script src="{% static 'js/apps.js' %}"></script>
-        <script src="{% static 'js/services.js' %}"></script>
-        <script src="{% static 'js/controllers.js' %}"></script>
 
         {% block extra_css %}{% endblock extra_css %}
 

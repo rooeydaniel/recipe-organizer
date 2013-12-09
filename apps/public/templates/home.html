@@ -6,10 +6,6 @@
 
 {% block home_link %}<li class="active"><a href="#">Home</a></li>{% endblock home_link %}
 
-{% block angular_controllers %}
-    <script src="{% static 'js/controllers.js' %}"></script>
-{% endblock angular_controllers %}
-
 {% block content %}
     <div ng-controller="HelloController">
         Say Hello to: <input type="text" ng-model="name"/>
